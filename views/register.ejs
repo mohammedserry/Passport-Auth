@@ -1,0 +1,83 @@
+<div
+  class="d-flex align-items-center justify-content-center"
+  style="
+    min-height: 100vh;
+    background: linear-gradient(to bottom right top left, #f0f8ff, #e0f7fa);
+  "
+>
+  <div class="col-md-6">
+    <div
+      class="card card-body shadow-lg rounded"
+      style="
+        background: linear-gradient(to bottom right, #ffffff, #f5f5f5);
+        border: none;
+      "
+    >
+      <h1 class="text-center mb-4">
+        <i class="fas fa-user-plus text-primary"></i> Register
+      </h1>
+      <%- include ("./partials/messages"); %>
+      <form action="/users/register" method="POST">
+        <div class="form-group mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input
+            type="name"
+            id="name"
+            name="name"
+            class="form-control rounded-pill"
+            placeholder="Enter Name"
+            value="<%= typeof name != 'undefined' ? name : '' %>"
+            style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)"
+          />
+        </div>
+        <div class="form-group mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-control rounded-pill"
+            placeholder="Enter Email"
+            value="<%= typeof email != 'undefined' ? email : '' %>"
+            style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)"
+          />
+        </div>
+        <div class="form-group mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="form-control rounded-pill"
+            placeholder="Create Password"
+            value="<%= typeof password != 'undefined' ? password : '' %>"
+            style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)"
+          />
+        </div>
+        <div class="form-group mb-4">
+          <label for="password2" class="form-label">Confirm Password</label>
+          <input
+            type="password"
+            id="password2"
+            name="password2"
+            class="form-control rounded-pill"
+            placeholder="Confirm Password"
+            value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
+            style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)"
+          />
+        </div>
+        <button
+          type="submit"
+          class="btn btn-primary btn-block mb-3"
+          style="border-radius: 25px; font-weight: bold"
+        >
+          Register
+        </button>
+      </form>
+      <p class="text-center text-muted mt-3">
+        Have An Account?
+        <a href="/users/login" class="text-primary fw-bold">Login</a>
+      </p>
+    </div>
+  </div>
+</div>
